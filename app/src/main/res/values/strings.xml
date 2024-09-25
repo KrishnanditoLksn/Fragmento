@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello Home fragment</string>
+    <string name="to_category">To Category</string>
+    <string name="category">Hello,this is category fragment</string>
+    <string name="category_life">Category Life</string>
+</resources>
