@@ -25,10 +25,17 @@ class CategoryFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(p0: View?) {
         if (p0?.id == R.id.btn_detail_category) {
-            val category = HomeFragment()
+            val category = DetailCategoryFragment()
+            val bundle = Bundle()
+            bundle.putString(DetailCategoryFragment.EXTRA_NAME , "Life is a passion")
+            val desc = "Yooo join with us "
+
+            category.arguments = bundle
+            category.description = desc
+
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.main, category, HomeFragment::class.java.simpleName)
+                replace(R.id.main, category, DetailCategoryFragment::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
