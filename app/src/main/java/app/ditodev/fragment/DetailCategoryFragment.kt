@@ -1,10 +1,12 @@
 package app.ditodev.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 
 class DetailCategoryFragment : Fragment() {
@@ -29,9 +31,9 @@ class DetailCategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tvCategoryFragment = view.findViewById(R.id.category_name)
-        tvCategoryDesc= view.findViewById(R.id.tv_category_description)
-        btnProfile= view.findViewById(R.id.btn_profile)
-        btnShowDialog= view.findViewById(R.id.btn_show_dialog)
+        tvCategoryDesc = view.findViewById(R.id.tv_category_description)
+        btnProfile = view.findViewById(R.id.btn_profile)
+        btnShowDialog = view.findViewById(R.id.btn_show_dialog)
 
 
         if (savedInstanceState != null) {
@@ -44,5 +46,25 @@ class DetailCategoryFragment : Fragment() {
             tvCategoryFragment.text = category
             tvCategoryDesc.text = description
         }
+
+
+        btnShowDialog.setOnClickListener {
+            val option = OptionDialogFragment()
+
+            val fragManager = childFragmentManager
+            option.show(fragManager, OptionDialogFragment::class.java.simpleName)
+        }
+
+        btnProfile.setOnClickListener {
+            val intent = Intent(requireActivity(), ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
+
+    internal var optionDialogListener: OptionDialogFragment.OnOptionDialogListener =
+        object : OptionDialogFragment.OnOptionDialogListener {
+            override fun onOptionChosen(coach: String?) {
+                Toast.makeText(requireActivity(), coach, Toast.LENGTH_SHORT).show()
+            }
+        }
 }

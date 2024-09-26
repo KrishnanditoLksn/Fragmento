@@ -5,4 +5,15 @@
     <string name="to_category">To Category</string>
     <string name="category">Hello,this is category fragment</string>
     <string name="category_life">Category Life</string>
+    <string name="category_description">Category Description</string>
+    <string name="to_profile">To Profile</string>
+    <string name="show_dialog">Show Dialog</string>
+    <string name="category_name">Category Name</string>
+    <string name="lionel_messi">Lionel Messi</string>
+    <string name="evan_dimas">Evan Dimas</string>
+    <string name="luis_figo">Luis Figo</string>
+    <string name="kylian_mbappe">Kylian Mbappe</string>
+    <string name="close">Close</string>
+    <string name="choose">Choose</string>
+    <string name="profile_act">Profile act</string>
 </resources>
